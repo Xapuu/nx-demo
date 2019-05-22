@@ -1,0 +1,57 @@
+{
+  "npmScope": "meetup",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "doggyd": {
+      "tags": []
+    },
+    "doggyd-e2e": {
+      "tags": []
+    },
+    "kittyc": {
+      "tags": []
+    },
+    "kittyc-e2e": {
+      "tags": []
+    },
+    "features-cart": {
+      "tags": ["ftr"]
+    },
+    "features-registration": {
+      "tags": ["ftr"]
+    },
+    "features-dog-adoption": {
+      "tags": ["ftr"]
+    },
+    "features-cat-meetup": {
+      "tags": ["ftr"]
+    },
+    "utilities-utilities": {
+      "tags": ["util"]
+    },
+    "access-common-services": {
+      "tags": ["acs"]
+    },
+    "access-dog-services": {
+      "tags": ["acs"]
+    },
+    "access-cat-services": {
+      "tags": ["acs"]
+    },
+    "ui-dog-components": {
+      "tags": ["ui"]
+    },
+    "ui-cat-components": {
+      "tags": ["ui"]
+    },
+    "ui-common-ui": {
+      "tags": ["ui"]
+    }
+  }
+}

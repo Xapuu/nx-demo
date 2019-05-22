@@ -1,0 +1,600 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "doggyd": {
+      "root": "apps/doggyd/",
+      "sourceRoot": "apps/doggyd/src",
+      "projectType": "application",
+      "prefix": "meetup",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/doggyd",
+            "index": "apps/doggyd/src/index.html",
+            "main": "apps/doggyd/src/main.ts",
+            "polyfills": "apps/doggyd/src/polyfills.ts",
+            "tsConfig": "apps/doggyd/tsconfig.app.json",
+            "assets": ["apps/doggyd/src/favicon.ico", "apps/doggyd/src/assets"],
+            "styles": ["apps/doggyd/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/doggyd/src/environments/environment.ts",
+                  "with": "apps/doggyd/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "doggyd:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "doggyd:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "doggyd:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/doggyd/tsconfig.app.json",
+              "apps/doggyd/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/doggyd/src/test.ts",
+            "tsConfig": "apps/doggyd/tsconfig.spec.json",
+            "karmaConfig": "apps/doggyd/karma.conf.js",
+            "polyfills": "apps/doggyd/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "doggyd-e2e": {
+      "root": "apps/doggyd-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/doggyd-e2e/protractor.conf.js",
+            "devServerTarget": "doggyd:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "doggyd:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/doggyd-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "kittyc": {
+      "root": "apps/kittyc/",
+      "sourceRoot": "apps/kittyc/src",
+      "projectType": "application",
+      "prefix": "meetup",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/kittyc",
+            "index": "apps/kittyc/src/index.html",
+            "main": "apps/kittyc/src/main.ts",
+            "polyfills": "apps/kittyc/src/polyfills.ts",
+            "tsConfig": "apps/kittyc/tsconfig.app.json",
+            "assets": ["apps/kittyc/src/favicon.ico", "apps/kittyc/src/assets"],
+            "styles": ["apps/kittyc/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/kittyc/src/environments/environment.ts",
+                  "with": "apps/kittyc/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "kittyc:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kittyc:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kittyc:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/kittyc/tsconfig.app.json",
+              "apps/kittyc/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/kittyc/src/test.ts",
+            "tsConfig": "apps/kittyc/tsconfig.spec.json",
+            "karmaConfig": "apps/kittyc/karma.conf.js",
+            "polyfills": "apps/kittyc/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "kittyc-e2e": {
+      "root": "apps/kittyc-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/kittyc-e2e/protractor.conf.js",
+            "devServerTarget": "kittyc:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kittyc:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/kittyc-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "features-cart": {
+      "root": "libs/features/cart",
+      "sourceRoot": "libs/features/cart/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/features/cart/tsconfig.lib.json",
+              "libs/features/cart/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/features/cart/src/test.ts",
+            "tsConfig": "libs/features/cart/tsconfig.spec.json",
+            "karmaConfig": "libs/features/cart/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "features-registration": {
+      "root": "libs/features/registration",
+      "sourceRoot": "libs/features/registration/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/features/registration/tsconfig.lib.json",
+              "libs/features/registration/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/features/registration/src/test.ts",
+            "tsConfig": "libs/features/registration/tsconfig.spec.json",
+            "karmaConfig": "libs/features/registration/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "features-dog-adoption": {
+      "root": "libs/features/dog-adoption",
+      "sourceRoot": "libs/features/dog-adoption/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/features/dog-adoption/tsconfig.lib.json",
+              "libs/features/dog-adoption/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/features/dog-adoption/src/test.ts",
+            "tsConfig": "libs/features/dog-adoption/tsconfig.spec.json",
+            "karmaConfig": "libs/features/dog-adoption/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "features-cat-meetup": {
+      "root": "libs/features/cat-meetup",
+      "sourceRoot": "libs/features/cat-meetup/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/features/cat-meetup/tsconfig.lib.json",
+              "libs/features/cat-meetup/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/features/cat-meetup/src/test.ts",
+            "tsConfig": "libs/features/cat-meetup/tsconfig.spec.json",
+            "karmaConfig": "libs/features/cat-meetup/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "utilities-utilities": {
+      "root": "libs/utilities/utilities",
+      "sourceRoot": "libs/utilities/utilities/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utilities/utilities/tsconfig.lib.json",
+              "libs/utilities/utilities/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/utilities/utilities/src/test.ts",
+            "tsConfig": "libs/utilities/utilities/tsconfig.spec.json",
+            "karmaConfig": "libs/utilities/utilities/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "access-common-services": {
+      "root": "libs/access/common-services",
+      "sourceRoot": "libs/access/common-services/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/access/common-services/tsconfig.lib.json",
+              "libs/access/common-services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/access/common-services/src/test.ts",
+            "tsConfig": "libs/access/common-services/tsconfig.spec.json",
+            "karmaConfig": "libs/access/common-services/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "access-dog-services": {
+      "root": "libs/access/dog-services",
+      "sourceRoot": "libs/access/dog-services/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/access/dog-services/tsconfig.lib.json",
+              "libs/access/dog-services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/access/dog-services/src/test.ts",
+            "tsConfig": "libs/access/dog-services/tsconfig.spec.json",
+            "karmaConfig": "libs/access/dog-services/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "access-cat-services": {
+      "root": "libs/access/cat-services",
+      "sourceRoot": "libs/access/cat-services/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/access/cat-services/tsconfig.lib.json",
+              "libs/access/cat-services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/access/cat-services/src/test.ts",
+            "tsConfig": "libs/access/cat-services/tsconfig.spec.json",
+            "karmaConfig": "libs/access/cat-services/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-dog-components": {
+      "root": "libs/ui/dog-components",
+      "sourceRoot": "libs/ui/dog-components/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/dog-components/tsconfig.lib.json",
+              "libs/ui/dog-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui/dog-components/src/test.ts",
+            "tsConfig": "libs/ui/dog-components/tsconfig.spec.json",
+            "karmaConfig": "libs/ui/dog-components/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-cat-components": {
+      "root": "libs/ui/cat-components",
+      "sourceRoot": "libs/ui/cat-components/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/cat-components/tsconfig.lib.json",
+              "libs/ui/cat-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui/cat-components/src/test.ts",
+            "tsConfig": "libs/ui/cat-components/tsconfig.spec.json",
+            "karmaConfig": "libs/ui/cat-components/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-common-ui": {
+      "root": "libs/ui/common-ui",
+      "sourceRoot": "libs/ui/common-ui/src",
+      "projectType": "library",
+      "prefix": "meetup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/common-ui/tsconfig.lib.json",
+              "libs/ui/common-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui/common-ui/src/test.ts",
+            "tsConfig": "libs/ui/common-ui/tsconfig.spec.json",
+            "karmaConfig": "libs/ui/common-ui/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "scss"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "doggyd"
+}

@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "module": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@meetup/features/cart": ["libs/features/cart/src/index.ts"],
+      "@meetup/features/registration": [
+        "libs/features/registration/src/index.ts"
+      ],
+      "@meetup/features/dog-adoption": [
+        "libs/features/dog-adoption/src/index.ts"
+      ],
+      "@meetup/features/cat-meetup": ["libs/features/cat-meetup/src/index.ts"],
+      "@meetup/utilities/utilities": ["libs/utilities/utilities/src/index.ts"],
+      "@meetup/access/common-services": [
+        "libs/access/common-services/src/index.ts"
+      ],
+      "@meetup/access/dog-services": ["libs/access/dog-services/src/index.ts"],
+      "@meetup/access/cat-services": ["libs/access/cat-services/src/index.ts"],
+      "@meetup/ui/dog-components": ["libs/ui/dog-components/src/index.ts"],
+      "@meetup/ui/cat-components": ["libs/ui/cat-components/src/index.ts"],
+      "@meetup/ui/common-ui": ["libs/ui/common-ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
